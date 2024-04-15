@@ -1,0 +1,44 @@
+{
+  "user": [
+    {
+      "id": "2",
+      "email": "vivvan@gamil.",
+      "password": 123
+    },
+    {
+      "id": "3",
+      "email": "zaran@gamil.com",
+      "password": 123
+    },
+    {
+      "id": "06ea",
+      "email": "komal@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "cf3e",
+      "email": "vrund@gmail.com",
+      "password": "4321"
+    },
+    {
+      "id": "5685",
+      "email": "khushali@gmail.com",
+      "password": "432134"
+    },
+    {
+      "id": "3b0c",
+      "email": "vihani@gmail.com",
+      "password": "432134"
+    },
+    {
+      "id": "26b3",
+      "email": "kayra@gmail.com",
+      "password": "432134876"
+    },
+    {
+      "id": "2e8a",
+      "email": "akash@gmail.com",
+      "password": "1234"
+    }
+  ]
+}
