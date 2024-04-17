@@ -40,7 +40,7 @@ const Data = () => {
     let handleView = (id, index) => {
 
         let data = res.user[index]
-        
+
         setView(data);
     };
 
@@ -62,9 +62,7 @@ const Data = () => {
             <button onClick={adduser}>save</button>
             <br />
 
-            <input type="text" name="email" value={view?.email} onChange={handle} />
-            <input type="text" name="password" value={view?.password} onChange={handle} />
-            <button onClick={update}>Update</button>
+
 
             <div>
                 {res.user?.map((val, index) => {
@@ -73,8 +71,39 @@ const Data = () => {
                             <p>{val.id}</p>
                             <h1>{val.email}</h1>
                             <h2>{val.password}</h2>
-                            <button onClick={() => handle(val.id)}>delete</button>
-                            <button onClick={() => handleView(val.id, index)}>View</button>
+                            <button className='btn btn-danger me-3'    onClick={() => handle(val.id)}>delete</button>
+                            <button data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => handleView(val.id, index)} className='btn btn-primary'>update</button>
+
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <div class="card" style={{ width: "100%" }}>
+                                                <div class="card-body">
+                                                    <form>
+                                                        <div class="mb-3">
+                                                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                                            <input type="email" name="email" value={view?.email} onChange={handle} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                                                            <input type="text" name="password" value={view?.password} onChange={handle} class="form-control" id="exampleInputPassword1" />
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onClick={update}>update</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </>
                     )
                 })
